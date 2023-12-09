@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using DemoSimpleBlazorUserAndRoleManager.Models;
 
 namespace DemoSimpleBlazorUserAndRoleManager.Data
 {
@@ -9,5 +10,7 @@ namespace DemoSimpleBlazorUserAndRoleManager.Data
             : base(options)
         {
         }
+
+        public DbSet<Person> Person {get; set;}
     }
 }

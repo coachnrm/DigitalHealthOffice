@@ -90,3 +90,5 @@
 /Users/home/Desktop/DemoSimpleBlazorUserAndRoleManager/DemoSimpleBlazorUserAndRoleManager/obj/Debug/net7.0/DemoSimpleBlazorUserAndRoleManager.pdb
 /Users/home/Desktop/DemoSimpleBlazorUserAndRoleManager/DemoSimpleBlazorUserAndRoleManager/obj/Debug/net7.0/DemoSimpleBlazorUserAndRoleManager.genruntimeconfig.cache
 /Users/home/Desktop/DemoSimpleBlazorUserAndRoleManager/DemoSimpleBlazorUserAndRoleManager/obj/Debug/net7.0/ref/DemoSimpleBlazorUserAndRoleManager.dll
+/Users/home/Desktop/DemoSimpleBlazorUserAndRoleManager/DemoSimpleBlazorUserAndRoleManager/bin/Debug/net7.0/Npgsql.dll
+/Users/home/Desktop/DemoSimpleBlazorUserAndRoleManager/DemoSimpleBlazorUserAndRoleManager/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll

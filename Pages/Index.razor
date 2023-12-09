@@ -10,24 +10,25 @@
 
 <PageTitle>Index</PageTitle>
 
-<h2>ยินดีต้อนรับสู่สำนักดิจิทัลทางการแพทย์ รพ.สมุทรสาคร</h2>
+<h2>ยินดีต้อนรับสู่สำนักงานดิจิทัลทางการแพทย์ รพ.สมุทรสาคร</h2>
 
 <SurveyPrompt Title="เว็บไซต์นี้จัดทำขึ้นในนามสำนักงานดิจิทัลทางการแพทย์" />
 
 
-<AuthorizeView Roles="Administrators">
+<AuthorizeView Roles="Users">
     <Authorized>
         <span>
-            <a target="_blank" href="ipdpatient">ผู้ป่วยใน</a><br />
-            <a target="_blank" href="administration">จัดการสถานะผู้ใช้</a>
+            กรุณากรอกรายละเอียดข้อมูลเพิ่มเติมของผู้ลงทะเบียน เพื่อตรวจสอบข้อมูลและอนุมัติการให้เปลี่ยนสถานะเข้าใช้งานหน้าอื่นๆได้
+            <a href="/person/add">กรอกข้อมูลเพิ่มเติม</a>
         </span>
     </Authorized>
 </AuthorizeView>
 
-<AuthorizeView Roles="Users, Doctors, Managers, Pharmacists, Nurses">
+<AuthorizeView Roles="Doctors, Managers, Pharmacists, Nurses">
     <Authorized>
         <span>
-            หาก login ครั้งแรกแล้ว เข้าไม่ได้ ขอให้ลอง login ใหม่อีกครั้ง แต่ถ้ามีปัญหาให้ติดต่อ 8926 ในเวลาราชการอีกครั้งครับ
+            หากท่านมีข้อเสนอแนะ สามารถเสนอแนะได้
+            <a href="/person/add">ข้อเสนอแนะเพิ่มเติม</a>
         </span>
     </Authorized>
 </AuthorizeView>

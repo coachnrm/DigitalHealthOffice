@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nEUaAq3gkdxWxCT0GVidEak8ewQ10gOBRW99e7lx2OO4KjYwiTzyg41YG/c3t5T+8/fbDz+bvy4cPVCGhhHOeg==",
+  "dgSpecHash": "tev/9Ovt4qANZxw86n8wIrd+0Taj51QSlB0WiPoBtrP5FG2mEHFvSgbKBvttQYIkB2U6VqDR7S3673n904NpMA==",
   "success": true,
   "projectFilePath": "/Users/home/Desktop/DemoSimpleBlazorUserAndRoleManager/DemoSimpleBlazorUserAndRoleManager/DemoSimpleBlazorUserAndRoleManager.csproj",
   "expectedPackageFiles": [
@@ -53,6 +53,8 @@
     "/Users/home/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/Users/home/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/home/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/home/.nuget/packages/npgsql/7.0.0/npgsql.7.0.0.nupkg.sha512",
+    "/Users/home/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.0/npgsql.entityframeworkcore.postgresql.7.0.0.nupkg.sha512",
     "/Users/home/.nuget/packages/remote.linq/7.1.0/remote.linq.7.1.0.nupkg.sha512",
     "/Users/home/.nuget/packages/remote.linq.newtonsoft.json/7.1.0/remote.linq.newtonsoft.json.7.1.0.nupkg.sha512",
     "/Users/home/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",

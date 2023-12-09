@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[7.0.12, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Remote.Linq.Newtonsoft.Json": {
               "target": "Package",
               "version": "[7.1.0, )"

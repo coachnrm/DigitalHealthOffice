@@ -1,0 +1,45 @@
+version: '3.4'
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  mssql:
+    container_name: mssql-db
+    hostname: mssql-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: 'reallyStrongPwd123'
+      MSSQL_DATA_DIR: /var/opt/mssql/data
+      MSSQL_PID: 'Developer' 
+      MSSQL_TCP_PORT: 1433 
+    ports: 
+      - "1434:1433"
+    volumes:
+      - ./data:/var/opt/mssql/data
+      - ./log:/var/opt/mssql/log
+      - ./secrets:/var/opt/mssql/secrets
+    networks:
+      - dev
+
+  demo-app: 
+    image: docker.io/library/demoapp5
+    depends_on:
+      - "mssql"
+    container_name: demoapp-services
+    ports:
+      - "8088:80"
+    build:
+      context: .
+      dockerfile: dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=server=mssql,1433;database=UserDb;trusted_connection=false;TrustServerCertificate=true;User=sa;Password=reallyStrongPwd123;
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - dev
+
+volumes:
+  app_data:
