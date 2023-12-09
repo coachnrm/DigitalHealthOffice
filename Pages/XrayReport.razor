@@ -1,0 +1,38 @@
+@page "/xrayreport/{hn}"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@inject NavigationManager Navigation
+@inject IJSRuntime js
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists")]
+
+<PageTitle>X-ray History</PageTitle>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ประเภท</th>
+            <th>วันที่</th>
+            <th>รายละเอียด</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in reports)
+        {
+             <tr>
+                <td>@item.xray_items_name</td>
+                <td>@item.report_date</td>
+                <td>@item.report_text</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@code {
+    [Parameter]
+    public string hn { get; set; }
+    public List<X_RAY_REPORT> reports = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+        reports = await ServiceHelpers.Get_X_RAY_REPORT(hn);
+    }
+}

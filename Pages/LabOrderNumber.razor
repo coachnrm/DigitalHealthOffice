@@ -1,0 +1,38 @@
+@page "/laborder/{hn}"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@inject NavigationManager Navigation
+@inject IJSRuntime js
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists")]
+
+<PageTitle>Lab order</PageTitle>
+<table class="table">
+    <thead>
+        <tr>
+            <th>วันที่</th>
+            <th>เลข lab order</th>
+            <th>ชื่อ lab</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in LabInPatients)
+        {
+             <tr>
+                <td>@item.OrderDate</td>
+                <td><a href="/laborderval/@item.LabOrderNumber">@item.LabOrderNumber</a></td>
+                <td>@item.FormName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@code {
+    [Parameter]
+    public string hn { get; set; }
+    public List<LabInPatient> LabInPatients = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        //LabInPatients = await ServiceHelpers.Get_LabInNumberPatient(an);
+        LabInPatients = await ServiceHelpers.Get_LabInNumberPatient_OPD_IPD(hn);
+    }
+}

@@ -1,0 +1,81 @@
+@page "/opdvisit/{vn}"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@inject NavigationManager Navigation
+@inject IJSRuntime js
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists")]
+
+<PageTitle>Patient Ward</PageTitle>
+@foreach (var item in opdscreens)
+    {
+        <p>สิทธิการรักษา: @item.pttype_name</p> <hr />
+        <p>อาการสำคัญ: @item.cc</p> <hr />
+        <p>โรคประจำตัว: @item.cc_persist_disease</p> <hr />
+        <p>ประวัติการผ่าตัด: @item.cc_operation_name</p>
+    }
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Temp</th>
+            <th>Pulse</th>
+            <th>RR</th>
+            <th>BP</th>
+            <th>BW</th>
+            <th>Ht</th>
+            <th>BMI</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in opdscreens)
+        {
+            
+            <tr>
+                <td>@item.aunnahaphoom</td>
+                <td>@item.cheeppajorn</td>
+                <td>@item.untrakanhaijai</td>
+                <td>@item.kwamdun</td>
+                <td>@item.numnuk</td>
+                <td>@item.suansung</td>
+                <td>@item.bmi</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>ประวัติการรักษา</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ลำดับ</th>
+            <th>รายการ</th>
+            <th>รูปแบบการใช้ยา</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in opddrugs)
+        {
+            <tr>
+                <td>@item.item_no</td>
+                <td>@item.Name</td>
+                <td>@item.shortlist @item.name1 @item.name2 @item.name3</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@foreach (var item in opdscreens)
+    {
+        <p>การวินิจฉัย: @item.icd10 @item.icd10_name</p>
+    }
+@code {
+    [Parameter]
+    public string vn { get; set; }
+    public List<Opdscreen> opdscreens = new();
+    public List<OpitemreceOut> opddrugs = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        opdscreens = await ServiceHelpers.eMROpdscreens(vn);
+        opddrugs = await ServiceHelpers.Get_EMRdispenseOPD(vn);
+    }
+
+}

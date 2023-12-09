@@ -1,0 +1,36 @@
+@page "/notephoto/{hn}"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@inject NavigationManager Navigation
+@inject IJSRuntime js
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists")]
+
+<PageTitle>Note photo</PageTitle>
+<table class="table">
+    <thead>
+        <tr>
+            <th>วันที่</th>
+            <th>รายละเอียด</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Ptnodes)
+        {
+             <tr>
+                <td>@item.noteDatetime</td>
+                <td>@item.plaintext</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@code {
+    [Parameter]
+    public string hn { get; set; }
+    public List<Ptnode> Ptnodes = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+        Ptnodes = await ServiceHelpers.GetNodePhoto(hn);
+    }
+}

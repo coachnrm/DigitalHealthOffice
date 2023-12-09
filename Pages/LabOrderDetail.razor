@@ -1,0 +1,70 @@
+@page "/laborderval/{LabOrderNumber}"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@inject NavigationManager Navigation
+@inject IJSRuntime js
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists")]
+
+<PageTitle>Lab result</PageTitle>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ผลเลือด</th>
+            <th>ค่าเลือด</th>
+            <th>หน่วย</th>
+            <th>ค่าปกติ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in LabDetailInPatients)
+        {
+            <tr>
+                <td>@item.labitemsname</td>
+                <td>@item.lab_order_result @item.lab_order_bacteric</td>
+                <td>@item.labitemsunit</td>
+                <td>@item.labitemsnormalvalue</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@foreach (var item in OutLabDatas)
+{
+    <img src="data:image/jpeg;base64,@item.image1" />
+    <img src="data:image/jpeg;base64,@item.image2" />
+    <img src="data:image/jpeg;base64,@item.image3" />
+    <img src="data:image/jpeg;base64,@item.image4" />
+    <img src="data:image/jpeg;base64,@item.image5" />
+}
+
+<div>
+    @if (outlabs != null)
+    {
+    <img src="data:image/jpeg;base64,@outlabs.image1" />
+    <img src="data:image/jpeg;base64,@outlabs.image2" />
+    <img src="data:image/jpeg;base64,@outlabs.image3" />
+    <img src="data:image/jpeg;base64,@outlabs.image4" />
+    <img src="data:image/jpeg;base64,@outlabs.image5" />
+}
+</div>
+
+@code {  
+    [Parameter]
+    public string LabOrderNumber { get; set; }
+
+
+    public List<LabDetailInPatient> LabDetailInPatients = new();
+    public List<OutLabData> OutLabDatas = new();
+    public OutLab outlabs = new();
+    
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        LabDetailInPatients = await ServiceHelpers.Get_LabDetailInPatient(LabOrderNumber);
+        OutLabDatas = await ServiceHelpers.Get_OutLabData(LabOrderNumber);
+        outlabs = await ServiceHelper3.GetOutLab(LabOrderNumber);
+    }
+
+}

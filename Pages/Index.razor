@@ -1,0 +1,120 @@
+﻿@page "/"
+
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Identity;
+@using System.Security.Claims
+@inject UserManager<IdentityUser> _UserManager
+@inject RoleManager<IdentityRole> _RoleManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IJSRuntime js
+
+<PageTitle>Index</PageTitle>
+
+<h2>ยินดีต้อนรับสู่สำนักดิจิทัลทางการแพทย์ รพ.สมุทรสาคร</h2>
+
+<SurveyPrompt Title="เว็บไซต์นี้จัดทำขึ้นในนามสำนักงานดิจิทัลทางการแพทย์" />
+
+
+<AuthorizeView Roles="Administrators">
+    <Authorized>
+        <span>
+            <a target="_blank" href="ipdpatient">ผู้ป่วยใน</a><br />
+            <a target="_blank" href="administration">จัดการสถานะผู้ใช้</a>
+        </span>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="Users, Doctors, Managers, Pharmacists, Nurses">
+    <Authorized>
+        <span>
+            หาก login ครั้งแรกแล้ว เข้าไม่ได้ ขอให้ลอง login ใหม่อีกครั้ง แต่ถ้ามีปัญหาให้ติดต่อ 8926 ในเวลาราชการอีกครั้งครับ
+        </span>
+    </Authorized>
+</AuthorizeView>
+
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        ClaimsPrincipal CurrentUser = (await authenticationStateTask).User;
+        if (CurrentUser!.Identity!.IsAuthenticated)
+        {
+            // NOTE: CurrentUser.Identity.Name =>  user Email used for the registration.
+            string userEmail = CurrentUser.Identity.Name!;
+
+            var user = await _UserManager.FindByNameAsync(userEmail);
+            var getUserRoles = await _UserManager.GetRolesAsync(user!);
+            if (getUserRoles.Count == 0)
+            {
+                var AdminRoleResult = await _RoleManager.FindByNameAsync("Administrators");
+                if (AdminRoleResult == null)
+                {
+                    // This means, Administrator role is not yet created, meaning it has not being assigned to anyone, if so then create it and assign to the current user.
+                    await _RoleManager.CreateAsync(new IdentityRole("Administrators"));
+                    await _UserManager.AddToRoleAsync(user!, "Administrators");
+                    return;
+                }
+                else
+                {
+                    var DoctorRoleResult = await _RoleManager.FindByNameAsync("Doctors");
+                    if (DoctorRoleResult == null)
+                    {
+                        await _RoleManager.CreateAsync(new IdentityRole("Doctors"));
+                        await _UserManager.AddToRoleAsync(user!, "Doctors");
+                        return;
+                    }
+                    else
+                    {
+                        var ManagerRoleResult = await _RoleManager.FindByNameAsync("Managers");
+                        if (ManagerRoleResult == null)
+                        {
+                            await _RoleManager.CreateAsync(new IdentityRole("Managers"));
+                            await _UserManager.AddToRoleAsync(user!, "Managers");
+                            return;
+                        }
+                        else
+                        {
+                            var NurseRoleResult = await _RoleManager.FindByNameAsync("Nurses");
+                            if (NurseRoleResult == null)
+                            {
+                                await _RoleManager.CreateAsync(new IdentityRole("Nurses"));
+                                await _UserManager.AddToRoleAsync(user!, "Nurses");
+                                return;
+                            }
+                            else
+                            {
+                                var PharmacistRoleResult = await _RoleManager.FindByNameAsync("Pharmacists");
+                                if (PharmacistRoleResult == null)
+                                {
+                                    await _RoleManager.CreateAsync(new IdentityRole("Pharmacists"));
+                                    await _UserManager.AddToRoleAsync(user!, "Pharmacists");
+                                    return;
+                                }
+                                else
+                                {
+                                    var UserRoleResult = await _RoleManager.FindByNameAsync("Users");
+                                    if (UserRoleResult == null)
+                                    {
+                                        await _RoleManager.CreateAsync(new IdentityRole("Users"));
+                                    }
+                                }
+                                await _UserManager.AddToRoleAsync(user!, "Users");
+                                try { await js.InvokeVoidAsync("alert", $"{user!.Email} has being asigned to {getUserRoles!.FirstOrDefault()} now"); } catch { }
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {// since it blazor server, js doenst work on first call unless second call, first will create the user role so lets read from the second call.
+                try { await js.InvokeVoidAsync("alert", $"{user!.Email} has being asigned to {getUserRoles!.FirstOrDefault()}"); } catch { }
+            }
+        }
+    }
+}
+
+

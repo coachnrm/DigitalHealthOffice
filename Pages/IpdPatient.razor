@@ -1,0 +1,36 @@
+@page "/ipdpatient"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists")]
+<PageTitle>Patient Ward</PageTitle>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>wardNumber</th>
+            <th>wardName</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in wards) {
+        <tr>
+            <td>@item.ward</td>
+            <td>@item.name</td>
+            <td><a href="/test/@item.ward">PatientList</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+
+    public List<Ward> wards = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        wards = await ServiceHelpers.GetWardName();
+    }
+
+    public string ward { get; set; }
+
+} 

@@ -1,0 +1,134 @@
+@page "/opd"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@inject NavigationManager Navigation
+@inject IJSRuntime js
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists")]
+
+<PageTitle>Patient Ward</PageTitle>
+<input value="@InputValue" @onchange="((ChangeEventArgs __e) => InputValue = __e?.Value?.ToString())">
+<button class="btn btn-primary" @onclick="Click" >ค้นหา HN</button>
+<table class="table">
+    <thead>
+        <th>Pname</th>
+        <th>Fname</th>
+        <th>Lname</th>
+        
+    </thead>
+    <tbody>
+        @foreach (var item in patients){
+        <tr>
+            <td>@item.Pname</td>
+            <td>@item.Fname</td>
+            <td>@item.Lname</td>
+            <td><img width="100" height="120" src="data:image/jpeg;base64,@item.Image" /></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<p>นัดครั้งหน้า</p>
+<table class="table">
+    <thead>
+        <th>วันที่</th>
+        <th>แผนกที่นัด</th>
+        <th>แพทย์ที่นัด</th>
+        
+    </thead>
+    <tbody>
+        @foreach (var item in wannnuts){
+        <tr>
+            <td>@item.nextdate</td>
+            <td>@item.department</td>
+            <td>@item.pname @item.fname @item.lname</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<p>ประวัติการตรวจ OPD</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>vist date</th>
+            <th>vn</th>
+            <th>an</th>
+            <th>การวินิจฉัย</th>
+            <th>แพทย์</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in vstDates) {
+        <tr>
+            <td>@item.vstdate</td>
+            <td><a href="/opdvisit/@item.vn" target="blank">@item.vn</a></td>
+            <td>@item.an</td>
+            <td>@item.diagname</td>
+            <td>@item.doctor_name</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<p>ประวัติการ x-ray</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ประเภท</th>
+            <th>วันที่</th>
+            <th>รายละเอียด</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in reports)
+        {
+             <tr>
+                <td><a href="http://localhost:9090/?QueryMode=PID&Value=@item.hn" target="blank">@item.xray_items_name</a></td>
+                <td>@item.report_date</td>
+                <td>@item.report_text</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>ประวัติการสั่ง lab</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>วันที่</th>
+            <th>เลข lab order</th>
+            <th>ชื่อ lab</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in LabInPatients)
+        {
+             <tr>
+                <td>@item.OrderDate</td>
+                <td><a href="/laborderval/@item.LabOrderNumber" target="blank">@item.LabOrderNumber</a></td>
+                <td>@item.FormName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    private string? InputValue {get; set;}
+
+    public List<Wannnut> wannnuts = new();
+    public List<VstDate> vstDates = new();
+    public List<Patient> patients = new();
+    public List<X_RAY_REPORT> reports = new();
+    public List<LabInPatient> LabInPatients = new();
+
+    private async void Click()
+    {
+        var _paraHn = InputValue;
+        var tempx = InputValue;
+        var hn = InputValue;
+
+        vstDates = await ServiceHelpers.GetVstDate(_paraHn);
+        patients = await ServiceHelpers.GetPatientDetail(tempx);
+        reports = await ServiceHelpers.Get_X_RAY_REPORT(hn);
+        LabInPatients = await ServiceHelpers.Get_LabInNumberPatient_OPD_IPD(hn);
+        wannnuts = await ServiceHelper2.GetWanNut(hn);
+    }
+
+}

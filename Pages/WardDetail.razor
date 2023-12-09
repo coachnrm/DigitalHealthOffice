@@ -1,0 +1,55 @@
+@page "/test/{ward}"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@inject NavigationManager Navigation
+@inject IJSRuntime js
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists")]
+
+<PageTitle>Patient Ward</PageTitle>
+<table class="table">
+    <thead>
+        <tr>
+            <th>BedNumber</th>
+            <th>HN</th>
+            <th>AN</th>
+            <th>VN</th>
+            <th>Image</th>
+            <th>pname</th>
+            <th>fname</th>
+            <th>lname</th>
+            <th>age</th>
+            <th>รายการเลือก</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ipts)
+        {
+            <tr>
+                <td>@item.bedno</td>
+                <td>@item.hn</td>
+                <td>@item.an</td>
+                <td>@item.vn</td>
+                <td><img width="100" height="120" src="data:image/jpeg;base64,@item.image" /></td>
+                <td>@item.pname</td>
+                <td>@item.fname</td>
+                <td>@item.lname</td>
+                <td>@item.age13</td>
+                <td> <a href="/opdvisit/@item.vn" target="_blank">ดูประวัติ OPD</a> <br /> <a href="/laborder/@item.hn" target="_blank">รายการ lab IPD</a> <br />
+                <a href="http://localhost:9090/?QueryMode=PID&Value=@item.hn" target="_blank">ดู x-ray</a>
+                    <br /> <a href="/notephoto/@item.hn" target="_blank">Note Photo</a> <br /> <a href="/drugprofile/@item.an" target="_blank">ยา continue</a> <br /> </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public string ward { get; set; }
+    public List<Ipt> ipts = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ipts = await ServiceHelpers.GetIpts(ward);
+    }
+
+}

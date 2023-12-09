@@ -1,0 +1,19 @@
+﻿<div class="alert alert-secondary mt-4">
+    <span class="oi oi-pencil me-2" aria-hidden="true"></span>
+    <strong>@Title</strong>
+
+    <span class="text-nowrap">
+        กรุณาล็อคอิน
+        <a class="font-weight-bold link-dark"href="Identity/Account/Login">ล็อคอิน</a>
+        หากท่านยังไม่มีบัญชี กรุณาลงทะเบียน
+        <a class="font-weight-bold link-dark" href="Identity/Account/Register">ลงทะเบียน</a>
+               
+    </span>
+    เมื่อลงทะเบียนเสร็จ ให้กดยืนยันตรง Click here to confirm your account ก่อนแล้วล็อคอิน เพื่อให้ใช้งานได้อย่างสมบูรณ์ ระบบการลงทะเบียนและล็อคอินกำลังจัดทำ ยังไม่สมบูรณ์ โปรดปฏิบัติตามคำแนะนำและขออภัยที่บางระบบยังไม่เปิดให้บริการ
+</div>
+
+@code {
+    // Demonstrates how a parent component can supply parameters
+    [Parameter]
+    public string? Title { get; set; }
+}
