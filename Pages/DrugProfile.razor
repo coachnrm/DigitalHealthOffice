@@ -1,0 +1,40 @@
+@page "/drugprofile/{an}"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@using DemoSimpleBlazorUserAndRoleManager.Controller
+@inject NavigationManager Navigation
+@inject IJSRuntime js
+@attribute [Authorize(Roles = "Administrators, Doctors, Nurses, Pharmacists, Managers")]
+
+<PageTitle>Drug Profile</PageTitle>
+<table class="table">
+    <thead>
+        <tr>
+            <th>วันที่สั่งยา</th>
+            <th>ประเภทการสั่งยา</th>
+            <th>ชื่อยา</th>
+            <th>วิธีการบริหารยา</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in drugs)
+        {
+             <tr>
+                <td>@item.orderdate</td>
+                <td>@item.orderstatus</td>
+                <td>@item.drug_name</td>
+                <td>@item.name1 @item.name2 @item.name3 @item.drugusage_name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@code {
+    [Parameter]
+    public string an { get; set; }
+    public List<Phama_mode_3_3_TAB> drugs = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+        drugs = await ServiceHelpers.Phama_Mode_3_3_TAB(an);
+    }
+}
