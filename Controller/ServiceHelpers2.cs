@@ -5,7 +5,7 @@ namespace DemoSimpleBlazorUserAndRoleManager.Controller;
 public class ServiceHelper2
 {
     //private static Uri DataBaseAddress { get; set; } = new Uri("http://183.89.226.246:189");
-    private static Uri DataBaseAddress { get; set; } = new Uri("http://172.16.0.88:5020");
+    private static Uri DataBaseAddress { get; set; } = new Uri("http://172.16.200.202:5020");
 
     public async static Task<List<Wannnut>> GetWanNut(string _hn) //  วันนัด
         {
