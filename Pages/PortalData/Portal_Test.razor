@@ -1,0 +1,74 @@
+@page "/portal_test"
+@using DemoSimpleBlazorUserAndRoleManager.Services
+@using DemoSimpleBlazorUserAndRoleManager.Data
+@inject IPortalService portalService
+@inject IJSRuntime jsRuntime
+@attribute [Authorize(Roles = "Administrators")]
+<h3>ระบบทดสอบจองคิวเวรเปล</h3>
+<a href="/portal/add" class="btn btn-outline-dark my-2">เพิ่มการจองคิวเปล</a>
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>QN</th>
+                    <th>ชื่อ-นามสกุล</th>
+                    <th>ต้นทาง</th>
+                    <th>ปลายทาง</th>
+                    <th>พนักงานเวรเปล</th>
+                    <th>ประเภทรถ</th>
+                    <th>ประเภทคนไข้</th>
+                    <th>ระดับความเร่งด่วน</th>
+                    <th>สถานะ</th>
+                    <th>หมายเหตุ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var portal in portals)
+                {
+                    <tr>
+                        <td>@portal.QueueId</td>
+                        <td>@portal.PatientName</td>
+                        <td>@portal.StartPort</td>
+                        <td>@portal.EndPort1 </td>
+                        <td>@portal.PortalName</td>
+                        <td>@portal.PortalType</td>
+                        <td>@portal.PatientType</td>
+                        <td>@portal.UrgentType</td>
+                        <td>@portal.Status</td>
+                        <td>@portal.Note</td>
+                        <td>
+                            <a href="/portal/edit/@portal.Id" class="btn btn-success">Edit</a>
+                            <a class="btn btn-danger" @onclick="async ()=> await Delete(portal)">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    private List<Models.Portal> portals = new();
+
+    private async Task Delete(Models.Portal portal)
+    {
+        bool confirmed = await jsRuntime.InvokeAsync<bool>("ยืนยัน", "คุณต้องการที่จะลบใช่ไหม");
+        if (confirmed)
+        {
+            if (portalService.Delete(portal.Id))
+            {
+                portals.Remove(portal);
+            }
+
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        portals = portalService.GetAll();
+        base.OnInitialized();
+    }
+
+    
+}

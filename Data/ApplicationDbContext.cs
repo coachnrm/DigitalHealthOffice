@@ -11,6 +11,8 @@ namespace DemoSimpleBlazorUserAndRoleManager.Data
         {
         }
 
-        public DbSet<Person> Person {get; set;}
+        public DbSet<Person> Person { get; set; }
+        public DbSet<Portal> Portal { get; set; }
+
     }
 }

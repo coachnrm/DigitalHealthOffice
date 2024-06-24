@@ -53,6 +53,58 @@ namespace DemoSimpleBlazorUserAndRoleManager.Data.Migrations
                     b.ToTable("Person");
                 });
 
+            modelBuilder.Entity("DemoSimpleBlazorUserAndRoleManager.Models.Portal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("EndPort1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EndPort2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EndPort3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EndPort4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PortalName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PortalType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QueueId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StartPort")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UrgentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Portal");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")

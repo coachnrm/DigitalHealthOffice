@@ -1,0 +1,147 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DemoSimpleBlazorUserAndRoleManager
+build_property.RootNamespace = DemoSimpleBlazorUserAndRoleManager
+build_property.ProjectDir = /Users/home/Desktop/DigitalHealthOffice/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/home/Desktop/DigitalHealthOffice
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/home/Desktop/DigitalHealthOffice/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/Administration.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5pc3RyYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/DrugProfile.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJ1Z1Byb2ZpbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/IpdPatient.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSXBkUGF0aWVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/LabOrderDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGFiT3JkZXJEZXRhaWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/LabOrderNumber.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGFiT3JkZXJOdW1iZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/NotePhoto.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90ZVBob3RvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/OpdVisit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3BkVmlzaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/OpdVisitDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3BkVmlzaXREZXRhaWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/PortalData/AddUpdatePortal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGFsRGF0YS9BZGRVcGRhdGVQb3J0YWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/PortalData/Assign.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGFsRGF0YS9Bc3NpZ24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/PortalData/Edit_Data.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGFsRGF0YS9FZGl0X0RhdGEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/PortalData/Input_Detail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGFsRGF0YS9JbnB1dF9EZXRhaWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/PortalData/Portal_Test.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGFsRGF0YS9Qb3J0YWxfVGVzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/UpdateUserPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXBkYXRlVXNlclBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/UserData.razor/AddUpdatePerson.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhdGEucmF6b3IvQWRkVXBkYXRlUGVyc29uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/UserData.razor/Persons.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckRhdGEucmF6b3IvUGVyc29ucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/WardDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvV2FyZERldGFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/XrayReport.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvWHJheVJlcG9ydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0xvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/PortalData/Add_Data.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGFsRGF0YS9BZGRfRGF0YS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-40b4v9ju0y
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/PortalData/Index_Nurse.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGFsRGF0YS9JbmRleF9OdXJzZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-swjw7qrbvn
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/PortalData/Portal_Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGFsRGF0YS9Qb3J0YWxfSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-l9c8ibb220
+
+[/Users/home/Desktop/DigitalHealthOffice/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3780kuum3s
+
+[/Users/home/Desktop/DigitalHealthOffice/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-w4vqeq5zw5
+
+[/Users/home/Desktop/DigitalHealthOffice/Areas/Identity/Pages/Account/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Areas/Identity/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/home/Desktop/DigitalHealthOffice/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
