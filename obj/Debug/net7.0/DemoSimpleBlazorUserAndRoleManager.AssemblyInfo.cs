@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemoSimpleBlazorUserAndRoleManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78caaf6036efb1ba08386b3b79d2e935da3957f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+066d11cadb07103c01edb5e64520a83531023614")]
 [assembly: System.Reflection.AssemblyProductAttribute("DemoSimpleBlazorUserAndRoleManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DemoSimpleBlazorUserAndRoleManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

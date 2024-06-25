@@ -32,13 +32,31 @@
 
            <div class="form-group">
               <label for="Name">ประเภทคนไข้</label>
-             <InputText class="form-control" @bind-Value="portal.PatientType"/>
+             <InputSelect @bind-Value="portal.PatientType">
+              <option value="">
+                เลือกประเภทคนไข้
+              </option>
+              <option checked="@(portal.PatientType == "OPD")" value="OPD">OPD</option>
+              <option checked="@(portal.PatientType == "IPD")" value="IPD">IPD</option>
+             </InputSelect>
              <ValidationMessage For="@(()=>portal.PatientType)"/>
            </div>
             
             <div class="form-group">
               <label for="Name">ประเภทรถ</label>
-             <InputText class="form-control" @bind-Value="portal.PortalType"/>
+             <InputSelect @bind-Value="portal.PortalType">
+              <option value="">
+                เลือกประเภทรถ
+              </option>
+              <option checked="@(portal.PortalType == "รถนั่ง")" value="รถนั่ง">รถนั่ง</option>
+              <option checked="@(portal.PortalType == "รถนอน")" value="รถนอน">รถนอน</option>
+              <option checked="@(portal.PortalType == "เฉพาะคน(มีรถแล้ว)")" value="เฉพาคน(มีรถแล้ว)">เฉพาะคน(มีรถแล้ว)</option>
+              <option checked="@(portal.PortalType == "รถนั่งปรับนอน")" value="รถนั่งปรับนอน">รถนั่งปรับนอน</option>
+              <option checked="@(portal.PortalType == "รถนั่งปรับนอน + ออกซิเจน")" value="รถนั่งปรับนอน + ออกซิเจน">รถนั่งปรับนอน + ออกซิเจน</option>
+              <option checked="@(portal.PortalType == "รถนั่ง + เสาน้ำเกลือ")" value="รถนั่ง + เสาน้ำเกลือ">รถนั่ง + เสาน้ำเกลือ</option>
+              <option checked="@(portal.PortalType == "รถนั่ง + ออกซิเจน")" value="รถนั่ง + ออกซิเจน">รถนั่ง + ออกซิเจน</option>
+              <option checked="@(portal.PortalType == "รถนอน + ออกซิเจน")" value="รถนอน + ออกซิเจน">รถนอน + ออกซิเจน</option>
+             </InputSelect>
              <ValidationMessage For="@(()=>portal.PortalType)"/>
            </div>
 
