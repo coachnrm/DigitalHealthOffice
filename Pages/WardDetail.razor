@@ -35,7 +35,8 @@
                 <td>@item.lname</td>
                 <td>@item.age13</td>
                 <td> <a href="/opdvisit/@item.vn" target="_blank">ดูประวัติ OPD</a> <br /> <a href="/laborder/@item.hn" target="_blank">รายการ lab IPD</a> <br />
-                <a href="http://localhost:9090/?QueryMode=PID&Value=@item.hn" target="_blank">ดู x-ray</a>
+                <a href="http://localhost:9090/?QueryMode=PID&Value=@item.hn" target="_blank">ดู x-ray</a> <br />
+                <a href="http://172.16.1.104/Emr2398_link/index.jsp?queryhn=@item.hn&user=50239&no_ax=true" target="_blank">ดูประวัติ binary</a>
                     <br /> <a href="/notephoto/@item.hn" target="_blank">Note Photo</a> <br /> <a href="/drugprofile/@item.an" target="_blank">ยา continue</a> <br /> </td>
             </tr>
         }

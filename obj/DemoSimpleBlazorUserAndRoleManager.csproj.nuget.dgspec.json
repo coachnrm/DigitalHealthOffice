@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/home/Desktop/DigitalHealthOffice/DemoSimpleBlazorUserAndRoleManager.csproj": {}
+    "D:\\DigitalHealthOffice\\DemoSimpleBlazorUserAndRoleManager.csproj": {}
   },
   "projects": {
-    "/Users/home/Desktop/DigitalHealthOffice/DemoSimpleBlazorUserAndRoleManager.csproj": {
+    "D:\\DigitalHealthOffice\\DemoSimpleBlazorUserAndRoleManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/home/Desktop/DigitalHealthOffice/DemoSimpleBlazorUserAndRoleManager.csproj",
+        "projectUniqueName": "D:\\DigitalHealthOffice\\DemoSimpleBlazorUserAndRoleManager.csproj",
         "projectName": "DemoSimpleBlazorUserAndRoleManager",
-        "projectPath": "/Users/home/Desktop/DigitalHealthOffice/DemoSimpleBlazorUserAndRoleManager.csproj",
-        "packagesPath": "/Users/home/.nuget/packages/",
-        "outputPath": "/Users/home/Desktop/DigitalHealthOffice/obj/",
+        "projectPath": "D:\\DigitalHealthOffice\\DemoSimpleBlazorUserAndRoleManager.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\DigitalHealthOffice\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/home/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -33,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -87,15 +88,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.17, 7.0.17]"
+              "version": "[7.0.15, 7.0.15]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.osx-x64",
-              "version": "[7.0.17, 7.0.17]"
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.15, 7.0.15]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.17, 7.0.17]"
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -106,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
