@@ -17,6 +17,8 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\DigitalHealthOffice
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 7.0
+build_property.EnableCodeStyleSeverity = 
 
 [D:/DigitalHealthOffice/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
@@ -24,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/DigitalHealthOffice/Pages/Administration.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5pc3RyYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DigitalHealthOffice/Pages/Authen.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVuLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DigitalHealthOffice/Pages/DrugProfile.razor]
@@ -58,26 +64,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3BkVmlzaXREZXRhaWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DigitalHealthOffice/Pages/PortalData/AddUpdatePortal.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsRGF0YVxBZGRVcGRhdGVQb3J0YWwucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/DigitalHealthOffice/Pages/PortalData/Assign.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsRGF0YVxBc3NpZ24ucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/DigitalHealthOffice/Pages/PortalData/Edit_Data.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsRGF0YVxFZGl0X0RhdGEucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/DigitalHealthOffice/Pages/PortalData/Input_Detail.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsRGF0YVxJbnB1dF9EZXRhaWwucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/DigitalHealthOffice/Pages/PortalData/Portal_Test.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsRGF0YVxQb3J0YWxfVGVzdC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/DigitalHealthOffice/Pages/UpdateUserPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlVXNlclBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -109,18 +95,6 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/DigitalHealthOffice/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
-
-[D:/DigitalHealthOffice/Pages/PortalData/Add_Data.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsRGF0YVxBZGRfRGF0YS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-9mttkuz6uc
-
-[D:/DigitalHealthOffice/Pages/PortalData/Index_Nurse.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsRGF0YVxJbmRleF9OdXJzZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-ikkskzmjxu
-
-[D:/DigitalHealthOffice/Pages/PortalData/Portal_Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsRGF0YVxQb3J0YWxfSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-jk1sv2rr64
 
 [D:/DigitalHealthOffice/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

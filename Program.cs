@@ -27,7 +27,12 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IPersonService, PersonService>();
-builder.Services.AddScoped<IPortalService, PortalService>();
+
+// Register HttpClient for Blazor Server
+builder.Services.AddHttpClient("ServerAPI", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5094/");
+});
 
 var app = builder.Build();
 

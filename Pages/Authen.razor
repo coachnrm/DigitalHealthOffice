@@ -1,0 +1,46 @@
+@page "/authen"
+@using DemoSimpleBlazorUserAndRoleManager.Models
+@inject IHttpClientFactory HttpClientFactory
+@inject HttpClient http
+
+
+<div class="my-2">
+    <button type="submit" @onclick="SendPostRequest" class="btn btn-primary">Save</button>
+</div>
+
+
+
+@code {
+    
+    Ovst ovst = new Ovst()
+    {
+        Hn = "0020000",
+        Doctor = null
+    };
+    protected async Task SendPostRequest()
+    {
+        try
+        {
+            var queryString = $"?hn={ovst.Hn}&doctor={ovst.Doctor}";
+            var url = $"http://localhost:5094/api/Hos/OpenVisitWithKey{queryString}";
+
+            // Send POST request
+            var response = await http.PostAsJsonAsync(url, ovst);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // Parse response
+                var responseData = await response.Content.ReadFromJsonAsync<ResponseModel>();
+                Console.WriteLine($"Success: {responseData.Status}, Message: {responseData.Message}");
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception occurred: {ex.Message}");
+        }
+    }
+}
